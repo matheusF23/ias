@@ -27,10 +27,16 @@ class DataTransfer():
     def loadMx(self, ac, x, memory):
         ac = memory[x]
         return ac
+    
     def loadMxNeg(self, ac, x, memory):
         if(memory[x][0] == '1'):
             temp = '0' + memory[x][1:]
         else:
             temp = '1' + memory[x][1:]
         ac = temp
+        return ac
+    
+    def loadAbsMx(self, ac, x, memory):
+        absMx = '0' + memory[x][1:]
+        ac = absMx
         return ac
