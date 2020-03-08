@@ -33,6 +33,14 @@ class Arithmetic():
         ac = op.convertBinaryToDecimal(ac) + abs(op.convertBinaryToDecimal(mx))
         ac = op.convertDecimalToBinary(ac)
         return ac
+    
+    def subMx(self,ac, x, memory):
+        """00000110 - Retorna a subtração: AC - M(X)"""
+        mx = memory[x]
+        op = self.operations
+        ac = op.convertBinaryToDecimal(ac) - op.convertBinaryToDecimal(mx)
+        ac = op.convertDecimalToBinary(ac)
+        return ac
 
     def __str__(self):
         return "Objeto contendo instruções de Aritmética"
