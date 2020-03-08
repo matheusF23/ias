@@ -1,4 +1,4 @@
-## Unconditional Deviation instructions ##
+## Conditional Deviation instructions ##
 #
 #  Opcode  | Symbolic representation | Description
 # 00001111 |     JUMP+ M(X,0:19)     | Se o número no AC for não negativo, apanha a próxima instrução da 
