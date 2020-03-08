@@ -19,9 +19,11 @@ class Arithmetic():
         self.operations = Operations()
     
     def addMx(self,ac, x, memory):
+        """00000101 - Retorna a soma de M(X) com AC"""
         mx = memory[x]
-        ac = self.operations.convertBinaryToDecimal(ac) + self.operations.convertBinaryToDecimal(mx)
-        ac = self.operations.convertDecimalToBinary(ac)
+        op = self.operations
+        ac = op.convertBinaryToDecimal(ac) + op.convertBinaryToDecimal(mx)
+        ac = op.convertDecimalToBinary(ac)
         return ac
 
     def __str__(self):
