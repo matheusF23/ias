@@ -15,4 +15,24 @@ class Arithmetic():
     def __init__(self):
         super().__init__()
 
+    def convertDecimalToBinary(self, n):
+        binary = ""
+        while(True):
+            binary = binary + str(n%2)
+            n = n//2
+            if n == 0:
+                break
+        binary = binary[::-1]
+        binary = int(binary)
+        return binary
+    
+    def convertBinaryToDecimal(self, n):
+        decimal = 0
+        n = str(n)
+        n = n[::-1]
+        tam = len(n)
+        for i in range(tam):
+            if n[i] == "1":
+                decimal = decimal + 2**i
+        return decimal
     
