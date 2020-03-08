@@ -1,4 +1,3 @@
 venv 
 .vscode 
-.pyc 
-__pychache__ 
+__pycache__
