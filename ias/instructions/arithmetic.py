@@ -50,9 +50,10 @@ class Arithmetic():
         ac = op.convertDecimalToBinary(ac)
         return ac
     
-    def multMX(self, mq, x, memory):
+    def multMx(self, mq, x, memory):
         """00001011 - Multiplica M(X) por MQ; coloca os bits mais significativos do resultado em AC;
         coloca bits menos significativos em MQ. 
+        
         Retorna uma tupla com os valores a serem adicionados: (ac,mq)"""
         mx = memory[x]
         op = self.operations
@@ -64,4 +65,3 @@ class Arithmetic():
 
     def __str__(self):
         return "Objeto contendo instruções de Aritmética"
-    
