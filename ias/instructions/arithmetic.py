@@ -11,39 +11,19 @@
 # 00010100 |           LSH           | Multiplica o AC por 2; ou seja, desloca à esquerda uma posição de bit
 # 00010101 |           RSH           | Divide o AC por 2; ou seja, desloca uma posição à direita
 
+from ias.arithmeticOperations.operations import Operations
+
 class Arithmetic():
     def __init__(self):
         super().__init__()
+        self.operations = Operations()
+    
+    def addMx(self,ac, x, memory):
+        mx = memory[x]
+        ac = self.operations.convertBinaryToDecimal(ac) + self.operations.convertBinaryToDecimal(mx)
+        ac = self.operations.convertDecimalToBinary(ac)
+        return ac
 
-    def convertDecimalToBinary(self, n):
-        binary = ""
-        nabs = abs(n)
-        while(True):
-            binary = binary + str(nabs%2)
-            nabs = nabs//2
-            if nabs == 0:
-                break
-        binary = binary[::-1]
-        if(n >= 0):
-            binary = '0' + binary
-        else:
-            binary = '1' + binary
-        return binary   # Retorna uma string
-    
-    def convertBinaryToDecimal(self, n):
-        signal = n[0]   # bit de sinal
-        decimal = 0
-        n = n[:0:-1]
-        tam = len(n)
-        for i in range(tam):
-            if n[i] == "1":
-                decimal = decimal + 2**i
-        if(signal == '0'):  # Número positivo
-            return decimal
-        else:
-            return decimal * (-1)   # Retorna um inteiro
-    
-    # def addMx(self,ac, x, memory):
-    #     mx = 
-    #     return ac
+    def __str__(self):
+        return "Objeto contendo instruções de Aritmética"
     
