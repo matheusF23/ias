@@ -62,6 +62,3 @@ class Arithmetic():
         ac = mult[0:40]
         mq = mult[40:80]
         return ac, mq
-
-    def __str__(self):
-        return "Objeto contendo instruções de Aritmética"

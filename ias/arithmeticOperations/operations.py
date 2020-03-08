@@ -44,6 +44,3 @@ class Operations():
             return decimal
         else:
             return decimal * (-1)   # Retorna um inteiro
-
-    def __str__(self):
-        return "Classe para operações com números aritméticos"
