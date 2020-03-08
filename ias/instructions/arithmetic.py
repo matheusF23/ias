@@ -17,14 +17,18 @@ class Arithmetic():
 
     def convertDecimalToBinary(self, n):
         binary = ""
+        nabs = abs(n)
         while(True):
-            binary = binary + str(n%2)
-            n = n//2
-            if n == 0:
+            binary = binary + str(nabs%2)
+            nabs = nabs//2
+            if nabs == 0:
                 break
         binary = binary[::-1]
-        binary = int(binary)
-        return binary
+        if(n >= 0):
+            binary = '0' + binary
+        else:
+            binary = '1' + binary
+        return binary   # Retorna uma string
     
     def convertBinaryToDecimal(self, n):
         signal = n[0]   # bit de sinal
@@ -37,7 +41,7 @@ class Arithmetic():
         if(signal == '0'):  # Número positivo
             return decimal
         else:
-            return decimal * (-1)
+            return decimal * (-1)   # Retorna um inteiro
     
     # def addMx(self,ac, x, memory):
     #     mx = 
