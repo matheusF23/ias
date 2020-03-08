@@ -4,7 +4,7 @@
 class Operations():
     def __init__(self):
         super().__init__()
-    
+    # TODO Formas de trabalhar com float
     def convertDecimalToBinary(self, n):
         """Converte um número Decimal em Binário, retornando um número binário de 40 bits, sendo o primeiro
         um bit de sinal"""
