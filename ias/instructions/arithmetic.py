@@ -25,6 +25,14 @@ class Arithmetic():
         ac = op.convertBinaryToDecimal(ac) + op.convertBinaryToDecimal(mx)
         ac = op.convertDecimalToBinary(ac)
         return ac
+    
+    def addAbsMx(self, ac, x, memory):
+        """00000111 - Retorna a soma do módulo de M(X) com AC"""
+        mx = memory[x]
+        op = self.operations
+        ac = op.convertBinaryToDecimal(ac) + abs(op.convertBinaryToDecimal(mx))
+        ac = op.convertDecimalToBinary(ac)
+        return ac
 
     def __str__(self):
         return "Objeto contendo instruções de Aritmética"

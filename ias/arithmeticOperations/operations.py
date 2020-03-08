@@ -6,6 +6,8 @@ class Operations():
         super().__init__()
     
     def convertDecimalToBinary(self, n):
+        """Converte um número Decimal em Binário, retornando um número binário de 40 bits, sendo o primeiro
+        um bit de sinal"""
         binary = ""
         nabs = abs(n)
 
@@ -30,6 +32,7 @@ class Operations():
         return binary   # Retorna uma string
     
     def convertBinaryToDecimal(self, n):
+        """Converte um número Binário em Decimal"""
         signal = n[0]   # bit de sinal
         decimal = 0
         n = n[:0:-1]
