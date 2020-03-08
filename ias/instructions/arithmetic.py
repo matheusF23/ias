@@ -27,12 +27,19 @@ class Arithmetic():
         return binary
     
     def convertBinaryToDecimal(self, n):
+        signal = n[0]   # bit de sinal
         decimal = 0
-        n = str(n)
-        n = n[::-1]
+        n = n[:0:-1]
         tam = len(n)
         for i in range(tam):
             if n[i] == "1":
                 decimal = decimal + 2**i
-        return decimal
+        if(signal == '0'):  # Número positivo
+            return decimal
+        else:
+            return decimal * (-1)
+    
+    # def addMx(self,ac, x, memory):
+    #     mx = 
+    #     return ac
     
