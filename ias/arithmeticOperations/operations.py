@@ -8,12 +8,21 @@ class Operations():
     def convertDecimalToBinary(self, n):
         binary = ""
         nabs = abs(n)
+
+        # Fazendo a conversão
         while(True):
             binary = binary + str(nabs%2)
             nabs = nabs//2
             if nabs == 0:
                 break
+
         binary = binary[::-1]
+
+        # Adicionar zeros à esquerda para termos os 40 bits com o de sinal
+        while(len(binary) < 39):
+            binary = '0' + binary
+
+        # Adicinoando o bit de sinal
         if(n >= 0):
             binary = '0' + binary
         else:
