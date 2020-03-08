@@ -17,3 +17,11 @@ class ConditionalDeviation():
         if(ac[0] == '0'):
             return memory[x][0:19]
         return ''
+    
+    def jumpMxRight(self, ac, x, memory):
+        """00010000 -  Se o número no AC for não negativo, apanha a próxima instrução da metade 
+        direita de M(X)
+        """
+        if(ac[0] == '0'):
+            return memory[x][20:39]
+        return ''
