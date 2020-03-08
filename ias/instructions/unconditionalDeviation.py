@@ -9,4 +9,9 @@ class UnconditionalDeviation():
         super().__init__()
 
     def jumpMxLeft(self, x, memory):
-        return memory[x][0,19]
+        """00001101 -  Apanha a próxima instrução da metade esquerda de M(X)"""
+        return memory[x][0:19]
+
+    def jumpMxRight(self, x, memory):
+        """00001110 - Apanha a próxima instrução da metade direita de M(X)"""
+        return memory[x][20:39]
