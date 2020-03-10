@@ -87,7 +87,7 @@ class Arithmetic():
         return ac
 
     def rsh(self, ac):
-        """00010100 - Multiplica o AC por 2; ou seja, desloca à esquerda uma posição de bit"""
+        """00010101 - Divide o AC por 2; ou seja, desloca uma posição à direita"""
         ac = self.operations.convertBinaryToDecimal(ac)
         ac = ac // 2
         ac = self.operations.convertDecimalToBinary(ac)
