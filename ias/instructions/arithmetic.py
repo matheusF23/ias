@@ -62,3 +62,19 @@ class Arithmetic():
         ac = mult[0:40]
         mq = mult[40:80]
         return ac, mq
+    
+    def divMx(self, ac, x, memory):
+        """00001100 - Divide AC por M(X); coloca o quociente em MQ e o resto em AC
+        
+        Retorna uma tupla com os valores a serem adicionados: (ac,mq)"""
+        mx = memory[x]
+        ac = self.operations.convertBinaryToDecimal(ac)
+        mx = self.operations.convertBinaryToDecimal(mx)
+        
+        mq = ac // mx   # Divisão inteira. Assim, obtém-se apenas o cociente
+        ac = ac % mx    # Já aqui pega-se o resto
+
+        ac = self.operations.convertDecimalToBinary(ac)
+        mq = self.operations.convertDecimalToBinary(mq)
+        
+        return ac, mq
