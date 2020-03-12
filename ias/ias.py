@@ -1,4 +1,8 @@
 
+# Inicialização da memória
+memory = []
+for i in range(1000):
+    memory.append('0000000000000000000000000000000000000000')
 
 # Definição dos registradores
 mbr = ''    # Registrador de buffer de memória
