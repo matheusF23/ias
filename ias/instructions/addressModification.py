@@ -16,3 +16,10 @@ class AddressModification():
         mx = memory[x][0:8] + ac[28:40] + memory[x][20:40]
 
         return mx
+    
+    def storRight(self, ac, x, memory):
+        """00010011 - Substitui campo de endereço da direita em M(X) por 12 bits mais à direita de AC
+        Retorna mx atualizado"""
+        mx = memory[x][0:28] + ac[28:40] 
+
+        return mx
