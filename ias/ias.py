@@ -30,6 +30,9 @@ unconditionalDeviation = UnconditionalDeviation()
 
 # Ciclo de busca
 while(True):
+    if(ir == "00000000"):
+        break
+    
     if(ibr != ''):
         ir = ibr[0:8]
         mar = ibr[8:20]
@@ -50,9 +53,6 @@ while(True):
             mar = mbr[8:20]
             # execution(ir, mar, memory, ac, mq)
 
-    if(ir[0:8] == "00000000"):
-        break
-
 # Ciclo de execução
 def execution(ir, mar, memory, ac, mq):
     """Reproduz o ciclo de execução. Retorna uma tupla com: (ac, mq)"""
@@ -64,5 +64,15 @@ def execution(ir, mar, memory, ac, mq):
         ac = dataTransfer.loadMq(mq, ac)
     elif(ir == "00001001"):
         mq = dataTransfer.loadMqMx(mar, mq, memory)
+    elif(ir == "00100001"):
+        dataTransfer.storMx(ac, mar, memory)
+    elif(ir == "00000001"):
+        ac = dataTransfer.loadMx(ac, mar, memory)
+    elif(ir == "00000010"):
+        ac = dataTransfer.loadMxNeg(ac, mar, memory)
+    elif(ir == "00000011"):
+        ac = dataTransfer.loadAbsMx(ac, mar, memory)
+    elif(ir == "00000100"):
+        ac = dataTransfer.loadAbsMxNeg(ac, mar, memory)
         
     return ac, mq
