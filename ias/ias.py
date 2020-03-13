@@ -7,9 +7,9 @@ from ias.instructions.dataTransfer import DataTransfer
 from ias.instructions.unconditionalDeviation import UnconditionalDeviation
 
 # Inicialização da memória
-memory = ["0000111000000000001000000000000000000000","0000010100000000010100000000000000000000",
-            "0000000000000000000000000001000000000100", "0000000000000000000000000000000000000000",
-            "0000000000000000000000000000000000000001", "0000000000000000000000000000000000000001"]
+memory = ["0001000000000000001000000000000000000000","0000010100000000010100000000000000000000",
+          "0000000000000000000000000001000000000100", "0000000000000000000000000000000000000000",
+          "0000000000000000000000000000000000000001", "0000000000000000000000000000000000000001"]
 # for i in range(1000):
 #     memory.append("0000000000000000000000000000000000000000")
 
@@ -19,7 +19,7 @@ mar = ""    # Registrador de endereço de memória
 ir = ""     # Registrador de instrução
 ibr = ""    # Registrador de buffer de instrução
 pc = 0      # Contador de programa
-ac = ""     # Acumulador
+ac = "0000000000000000000000000000000000000000"     # Acumulador
 mq = ""     # Quociente multiplicador
 
 # Inicialização de Instâncias necessárias
@@ -56,6 +56,12 @@ def execution(ir, mar, memory, ac, mq, ibr):
         ibr = unconditionalDeviation.jumpMxLeft(mar, memory)
     elif(ir == "00001110"):
         ibr = unconditionalDeviation.jumpMxRight(mar, memory)
+    
+    # Execução das instruções de desvio incondicional
+    elif(ir == "00001111"):
+        ibr = conditionalDeviation.jumpMxLeft(ac, mar, memory)
+    elif(ir == "00010000"):
+        ibr = conditionalDeviation.jumpMxRight(ac, mar, memory)
     
     elif(ir == "00000101"):
         ac = arithmetic.addMx(ac, mar, memory)
@@ -98,5 +104,5 @@ for i in range(10):
     
     if(ir == "00000000"):
         break
-    print(ir, ac, mq, ibr, mar)
+    print("ir: ", ir, "ac: ", ac, "mq: ", "mq: ", mq, "ibr: ", ibr, "mar: ", mar)
 print('finish')
