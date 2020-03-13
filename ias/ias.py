@@ -7,8 +7,8 @@ from ias.instructions.dataTransfer import DataTransfer
 from ias.instructions.unconditionalDeviation import UnconditionalDeviation
 
 # Inicialização da memória
-memory = ["0000110100000000001000000000000000000000","0000010100000000010100000000000000000000",
-            "0000000100000000010000000000000000000000", "0000000000000000000000000000000000000000",
+memory = ["0000111000000000001000000000000000000000","0000010100000000010100000000000000000000",
+            "0000000000000000000000000001000000000100", "0000000000000000000000000000000000000000",
             "0000000000000000000000000000000000000001", "0000000000000000000000000000000000000001"]
 # for i in range(1000):
 #     memory.append("0000000000000000000000000000000000000000")
@@ -54,6 +54,9 @@ def execution(ir, mar, memory, ac, mq, ibr):
     # Execução das instruções de desvio incondicional
     elif(ir == "00001101"):
         ibr = unconditionalDeviation.jumpMxLeft(mar, memory)
+    elif(ir == "00001110"):
+        ibr = unconditionalDeviation.jumpMxRight(mar, memory)
+    
     elif(ir == "00000101"):
         ac = arithmetic.addMx(ac, mar, memory)
         
@@ -61,16 +64,15 @@ def execution(ir, mar, memory, ac, mq, ibr):
 
 # Ciclo de busca
 for i in range(10):
-    if(ibr != ''):
+    if(ibr != ""):
         ir = ibr[0:8]
         mar = ibr[8:20]
-        ibr = ''
+        ibr = ""
         pc += 1
         answer = execution(ir, mar, memory, ac, mq, ibr)
         ac = answer[0]
         mq = answer[1]
-        if(answer[2] != ''):
-                ibr = answer[2]
+        ibr = answer[2]
     else:
         # mar = pc  # A principio não precisa
         mbr = memory[pc]
@@ -78,23 +80,21 @@ for i in range(10):
         if(mbr[0:20] == "00000000000000000000"):
             ir = mbr[20:28]
             mar = mbr[28:40]
-            mbr = ''
+            mbr = ""
             pc += 1
             answer = execution(ir, mar, memory, ac, mq, ibr)
             ac = answer[0]
             mq = answer[1]
-            if(answer[2] != ''):
-                ibr = answer[2]
+            ibr = answer[2]
         else:
             ibr = mbr[20:40]
             ir = mbr[0:8]
             mar = mbr[8:20]
-            mbr = ''
+            mbr = ""
             answer = execution(ir, mar, memory, ac, mq, ibr)
             ac = answer[0]
             mq = answer[1]
-            if(answer[2] != ''):
-                ibr = answer[2]
+            ibr = answer[2]
     
     if(ir == "00000000"):
         break
