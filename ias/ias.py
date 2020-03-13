@@ -1,10 +1,10 @@
 
-# from ias.arithmeticOperations.operations import Operations
-# from ias.instructions.arithmetic import Arithmetic
-# from ias.instructions.addressModification import AddressModification
-# from ias.instructions.conditionalDeviation import ConditionalDeviation
-# from ias.instructions.dataTransfer import DataTransfer
-# from ias.instructions.unconditionalDeviation import UnconditionalDeviation
+from ias.arithmeticOperations.operations import Operations
+from ias.instructions.arithmetic import Arithmetic
+from ias.instructions.addressModification import AddressModification
+from ias.instructions.conditionalDeviation import ConditionalDeviation
+from ias.instructions.dataTransfer import DataTransfer
+from ias.instructions.unconditionalDeviation import UnconditionalDeviation
 
 # Inicialização da memória
 memory = []
@@ -20,14 +20,15 @@ pc = 0      # Contador de programa
 ac = ""     # Acumulador
 mq = ""     # Quociente multiplicador
 
-# # Inicialização de Instâncias necessárias
-# op = Operations()
-# arithmetic = Arithmetic()
-# addressModification = AddressModification()
-# conditionalDeviation = ConditionalDeviation()
-# dataTransfer = dataTransfer()
-# unconditionalDeviation = UnconditionalDeviation()
+# Inicialização de Instâncias necessárias
+op = Operations()
+arithmetic = Arithmetic()
+addressModification = AddressModification()
+conditionalDeviation = ConditionalDeviation()
+dataTransfer = DataTransfer()
+unconditionalDeviation = UnconditionalDeviation()
 
+# Ciclo de busca
 while(True):
     if(ibr != ''):
         ir = ibr[0:8]
@@ -51,3 +52,17 @@ while(True):
 
     if(ir[0:8] == "00000000"):
         break
+
+# Ciclo de execução
+def execution(ir, mar, memory, ac, mq):
+    """Reproduz o ciclo de execução. Retorna uma tupla com: (ac, mq)"""
+    
+    mar = op.convertBinaryToDecimalWithoutSignal(mar)     # Converte mar para decimal para acessar a posição de memória
+    
+    # Execução das instruções de transferência de dados
+    if(ir == "00001010"):
+        ac = dataTransfer.loadMq(mq, ac)
+    elif(ir == "00001001"):
+        mq = dataTransfer.loadMqMx(mar, mq, memory)
+        
+    return ac, mq

@@ -43,3 +43,13 @@ class Operations():
             return decimal
         else:
             return decimal * (-1)   # Retorna um inteiro
+    
+    def convertBinaryToDecimalWithoutSignal(self, n):
+        """Converte um número Binário em Decimal"""
+        decimal = 0
+        n = n[::-1]
+        tam = len(n)
+        for i in range(tam):
+            if n[i] == "1":
+                decimal = decimal + 2**i
+        return decimal
