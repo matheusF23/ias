@@ -10,8 +10,8 @@ class UnconditionalDeviation():
 
     def jumpMxLeft(self, x, memory):
         """00001101 -  Apanha a próxima instrução da metade esquerda de M(X)"""
-        return memory[x][0:19]
+        return memory[x][0:20]
 
     def jumpMxRight(self, x, memory):
         """00001110 - Apanha a próxima instrução da metade direita de M(X)"""
-        return memory[x][20:39]
+        return memory[x][20:40]

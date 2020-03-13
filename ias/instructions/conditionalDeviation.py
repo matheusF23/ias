@@ -15,7 +15,7 @@ class ConditionalDeviation():
         esquerda de M(X)
         """
         if(ac[0] == '0'):
-            return memory[x][0:19]
+            return memory[x][0:20]
         return ''
     
     def jumpMxRight(self, ac, x, memory):
@@ -23,5 +23,5 @@ class ConditionalDeviation():
         direita de M(X)
         """
         if(ac[0] == '0'):
-            return memory[x][20:39]
+            return memory[x][20:40]
         return ''
