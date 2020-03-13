@@ -57,14 +57,33 @@ def execution(ir, mar, memory, ac, mq, ibr):
     elif(ir == "00001110"):
         ibr = unconditionalDeviation.jumpMxRight(mar, memory)
     
-    # Execução das instruções de desvio incondicional
+    # Execução das instruções de desvio condicional
     elif(ir == "00001111"):
         ibr = conditionalDeviation.jumpMxLeft(ac, mar, memory)
     elif(ir == "00010000"):
         ibr = conditionalDeviation.jumpMxRight(ac, mar, memory)
     
+    # Execução das instruções aritméticas
     elif(ir == "00000101"):
         ac = arithmetic.addMx(ac, mar, memory)
+    elif(ir == "00000111"):
+        ac = arithmetic.addAbsMx(ac, mar, memory)
+    elif(ir == "00000110"):
+        ac = arithmetic.subMx(ac, mar, memory)
+    elif(ir == "00001000"):
+        ac = arithmetic.subAbsMx(ac, mar, memory)
+    elif(ir == "00001011"):
+        ans = arithmetic.multMx(mq, mar, memory)
+        ac = ans[0]
+        mq = ans[1]
+    elif(ir == "00001100"):
+        ans = arithmetic.divMx(ac, mar, memory)
+        ac = ans[0]
+        mq = ans[1]
+    elif(ir == "00010100"):
+        ac = arithmetic.lsh(ac)
+    elif(ir == "00010101"):
+        ac = arithmetic.rsh(ac)
         
     return ac, mq, ibr
 
