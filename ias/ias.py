@@ -12,13 +12,20 @@ for i in range(1000):
     memory.append("0000000000000000000000000000000000000000")
 
 # Carregando programa na memória
-program = open("ias/programFiles/sumOnePlusOne.txt", "r")
+program = open("ias/programFiles/multLargeNumbers.txt", "r")
 x = 0   # Acesso à memória
 for line in program:
     partsOfTheLine = line.split()
     memory[x] = partsOfTheLine[0]
     x += 1
+program.close()
 
+showMemory = input("Gostaria de visualizar a memória? (y/n)")
+if(showMemory == 'y' or showMemory == 'yes'):
+    for i in range(x):  # Mostrar apenar a memória carregada
+        print(memory[i])
+print("Executando programa ................................................................................")
+    
 # Definição dos registradores
 mbr = ""    # Registrador de buffer de memória
 mar = ""    # Registrador de endereço de memória
@@ -136,5 +143,5 @@ for i in range(10):
     
     if(ir == "00000000"):
         break
-    print("ir: ", ir, "ac: ", ac, "mq: ", "mq: ", mq, "ibr: ", ibr, "mar: ", mar)
+    print("ir: ", ir, "ac: ", ac, "mq: ", mq, "ibr: ", ibr, "mar: ", mar)
 print('finish')

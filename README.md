@@ -12,7 +12,7 @@ No arquivo principal (ias.py) insira na variável program o programa a ser carre
 
 A formatação do arquivo 'program.txt' é a seguinte: 'palavra de instrução' + 'comentários'
 
-Cada linha inicia com a palavra de instrução seguida de um possível comentário
+Cada linha inicia com a palavra de instrução seguida de um possível comentário. 
 
 Exemplo de um programa para somar 1 + 1:
 
