@@ -7,11 +7,9 @@ from ias.instructions.dataTransfer import DataTransfer
 from ias.instructions.unconditionalDeviation import UnconditionalDeviation
 
 # Inicialização da memória
-memory = ["0001000000000000001000000000000000000000","0000010100000000010100000000000000000000",
-          "0000000000000000000000000001000000000100", "0000000000000000000000000000000000000000",
-          "0000000000000000000000000000000000000001", "0000000000000000000000000000000000000001"]
-# for i in range(1000):
-#     memory.append("0000000000000000000000000000000000000000")
+memory = []
+for i in range(1000):
+    memory.append("0000000000000000000000000000000000000000")
 
 # Definição dos registradores
 mbr = ""    # Registrador de buffer de memória
@@ -129,5 +127,5 @@ for i in range(10):
     
     if(ir == "00000000"):
         break
-    print("ir: ", ir, "ac: ", ac, "mq: ", "mq: ", mq, "ibr: ", ibr, "mar: ", mar)
-print('finish')
+#     print("ir: ", ir, "ac: ", ac, "mq: ", "mq: ", mq, "ibr: ", ibr, "mar: ", mar)
+# print('finish')
