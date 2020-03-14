@@ -11,6 +11,14 @@ memory = []
 for i in range(1000):
     memory.append("0000000000000000000000000000000000000000")
 
+# Carregando programa na memória
+program = open("ias/programFiles/sumOnePlusOne.txt", "r")
+x = 0   # Acesso à memória
+for line in program:
+    partsOfTheLine = line.split()
+    memory[x] = partsOfTheLine[0]
+    x += 1
+
 # Definição dos registradores
 mbr = ""    # Registrador de buffer de memória
 mar = ""    # Registrador de endereço de memória
@@ -33,6 +41,7 @@ def execution(ir, mar, memory, ac, mq, ibr):
     """Reproduz o ciclo de execução. Retorna uma tupla com: (ac, mq, ibr)"""
     
     mar = op.convertBinaryToDecimalWithoutSignal(mar)     # Converte mar para decimal para acessar a posição de memória
+    
     # Execução das instruções de transferência de dados
     if(ir == "00001010"):
         ac = dataTransfer.loadMq(mq, ac)
@@ -127,5 +136,5 @@ for i in range(10):
     
     if(ir == "00000000"):
         break
-#     print("ir: ", ir, "ac: ", ac, "mq: ", "mq: ", mq, "ibr: ", ibr, "mar: ", mar)
-# print('finish')
+    print("ir: ", ir, "ac: ", ac, "mq: ", "mq: ", mq, "ibr: ", ibr, "mar: ", mar)
+print('finish')
