@@ -84,6 +84,12 @@ def execution(ir, mar, memory, ac, mq, ibr):
         ac = arithmetic.lsh(ac)
     elif(ir == "00010101"):
         ac = arithmetic.rsh(ac)
+    
+    # Execução das instruções de modificação de endereço
+    elif(ir == "00010010"):
+        addressModification.storLeft(ac, mar, memory)
+    elif(ir == "00010011"):
+        addressModification.storRight(ac, mar, memory)
         
     return ac, mq, ibr
 
