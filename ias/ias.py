@@ -12,7 +12,7 @@ for i in range(1000):
     memory.append("0000000000000000000000000000000000000000")
 
 # Carregando programa na memória
-program = open("ias/programFiles/multLargeNumbers.txt", "r")
+program = open("ias/programFiles/testInstructions.txt", "r")
 x = 0   # Acesso à memória
 for line in program:
     partsOfTheLine = line.split()
@@ -24,7 +24,7 @@ showMemory = input("Gostaria de visualizar a memória? (y/n)")
 if(showMemory == 'y' or showMemory == 'yes'):
     for i in range(x):  # Mostrar apenar a memória carregada
         print(i, memory[i])
-print("Executando programa ................................................................................")
+print("\n### Executando programa ###\n")
     
 # Definição dos registradores
 mbr = ""    # Registrador de buffer de memória
@@ -108,7 +108,7 @@ def execution(ir, mar, memory, ac, mq, ibr):
     return ac, mq, ibr
 
 # Ciclo de busca
-for i in range(10):
+for i in range(999):
     if(ibr != ""):
         ir = ibr[0:8]
         mar = ibr[8:20]
@@ -140,10 +140,10 @@ for i in range(10):
             ac = answer[0]
             mq = answer[1]
             ibr = answer[2]
-    
+
+    print("ir: ", ir, "mar: ", mar, "ac: ", ac, "mq: ", mq, "ibr: ", ibr)
     if(ir == "00000000"):
         break
-    print("ir: ", ir, "mar: ", mar, "ac: ", ac, "mq: ", mq, "ibr: ", ibr)
 
 showMemory2 = input("Gostaria de visualizar a Memória? (y/n)")
 if(showMemory2 == 'y' or showMemory == 'yes'):
@@ -154,4 +154,4 @@ if(showMemory2 == 'y' or showMemory == 'yes'):
             break
         print(count, memory[count], count+1, memory[count+1], count+2, memory[count+2])
         count += 3
-print('Finish Program')
+print("\n### Finish Program ###")
