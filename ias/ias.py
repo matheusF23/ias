@@ -23,7 +23,7 @@ program.close()
 showMemory = input("Gostaria de visualizar a memória? (y/n)")
 if(showMemory == 'y' or showMemory == 'yes'):
     for i in range(x):  # Mostrar apenar a memória carregada
-        print(memory[i])
+        print(i, memory[i])
 print("Executando programa ................................................................................")
     
 # Definição dos registradores
@@ -143,5 +143,15 @@ for i in range(10):
     
     if(ir == "00000000"):
         break
-    print("ir: ", ir, "ac: ", ac, "mq: ", mq, "ibr: ", ibr, "mar: ", mar)
-print('finish')
+    print("ir: ", ir, "mar: ", mar, "ac: ", ac, "mq: ", mq, "ibr: ", ibr)
+
+showMemory2 = input("Gostaria de visualizar a Memória? (y/n)")
+if(showMemory2 == 'y' or showMemory == 'yes'):
+    count = 0
+    while(count < 1000):
+        if(count == 999):
+            print(count, memory[count])
+            break
+        print(count, memory[count], count+1, memory[count+1], count+2, memory[count+2])
+        count += 3
+print('Finish Program')
