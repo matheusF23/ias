@@ -11,7 +11,7 @@
 # 00010100 |           LSH           | Multiplica o AC por 2; ou seja, desloca à esquerda uma posição de bit
 # 00010101 |           RSH           | Divide o AC por 2; ou seja, desloca uma posição à direita
 
-from ias.arithmeticOperations.operations import Operations
+from iasLib.arithmeticOperations.operations import Operations
 
 class Arithmetic():
     def __init__(self):

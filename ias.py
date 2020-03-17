@@ -1,10 +1,10 @@
 
-from ias.arithmeticOperations.operations import Operations
-from ias.instructions.arithmetic import Arithmetic
-from ias.instructions.addressModification import AddressModification
-from ias.instructions.conditionalDeviation import ConditionalDeviation
-from ias.instructions.dataTransfer import DataTransfer
-from ias.instructions.unconditionalDeviation import UnconditionalDeviation
+from iasLib.arithmeticOperations.operations import Operations
+from iasLib.instructions.arithmetic import Arithmetic
+from iasLib.instructions.addressModification import AddressModification
+from iasLib.instructions.conditionalDeviation import ConditionalDeviation
+from iasLib.instructions.dataTransfer import DataTransfer
+from iasLib.instructions.unconditionalDeviation import UnconditionalDeviation
 
 # Inicialização da memória
 memory = []
@@ -12,7 +12,7 @@ for i in range(1000):
     memory.append("0000000000000000000000000000000000000000")
 
 # Carregando programa na memória
-program = open("ias/programFiles/testInstructions.txt", "r")
+program = open("programFiles/testInstructions.txt", "r")
 x = 0   # Acesso à memória
 for line in program:
     partsOfTheLine = line.split()
