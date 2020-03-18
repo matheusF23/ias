@@ -12,7 +12,7 @@ for i in range(1000):
     memory.append("0000000000000000000000000000000000000000")
 
 # Carregando programa na memória
-program = open("programFiles/testInstructions.txt", "r")
+program = open("programFiles/sumOnePlusOne.txt", "r")
 x = 0   # Acesso à memória
 for line in program:
     partsOfTheLine = line.split()
@@ -145,7 +145,7 @@ for i in range(999):
     if(ir == "00000000"):
         break
 
-showMemory2 = input("Gostaria de visualizar a Memória? (y/n)")
+showMemory2 = input("\nGostaria de visualizar a Memória Completa? (y/n)")
 if(showMemory2 == 'y' or showMemory == 'yes'):
     count = 0
     while(count < 1000):
@@ -155,3 +155,5 @@ if(showMemory2 == 'y' or showMemory == 'yes'):
         print(count, memory[count], count+1, memory[count+1], count+2, memory[count+2])
         count += 3
 print("\n### Finish Program ###")
+
+getout = input("\nPressione qualquer tecla para sair!")
