@@ -4,7 +4,7 @@ Este projeto consiste em desenvolver a arquitetura utilizada no computador IAS.
 
 ## Arquitetura do projeto
 
-A pasta IAS/ contém o arquivo principal da execução (ias.py) e a pasta IAS/iasLib/ que contém alguns pacotes com módulos necessários para a execução do programa.
+A pasta `IAS/` contém o arquivo principal da execução (ias.py) e a pasta `IAS/iasLib/` que contém alguns pacotes com módulos necessários para a execução do programa.
 
 ### Executando o IAS
 
@@ -12,7 +12,7 @@ A pasta IAS/ contém o arquivo principal da execução (ias.py) e a pasta IAS/ia
 
 No diretório ~/IAS/ digite 
 
-```~/ias$ python ias.py```
+`~/ias$ python ias.py`
 
 **Abrindo o arquivo**
 
@@ -20,7 +20,7 @@ Acesse o local do arquivo ias.py e execute-o.
 
 ### Executando programas
 
-No arquivo principal (ias.py) insira na variável program o programa a ser carregado na memória e execute o arquivo ias.py. Basta colocar o path para o arquivo .txt. No caso, os programas estão sendo colocados na pasta 'programFiles/'.
+No arquivo principal (ias.py) insira na variável program o programa a ser carregado na memória e execute o arquivo ias.py. Basta colocar o path para o arquivo .txt. No caso, os programas estão sendo colocados na pasta `programFiles/`.
 
 A formatação do arquivo 'program.txt' é a seguinte: 'palavra de instrução' + 'comentários'
 
