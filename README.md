@@ -14,13 +14,13 @@ No diretório ~/IAS/ digite
 
 `~/ias$ python ias.py`
 
-**Abrindo o arquivo**
+**Abrindo o arquivo**:
 
 Acesse o local do arquivo ias.py e execute-o.
 
 ### Executando programas
 
-No arquivo principal (ias.py) insira na variável program o programa a ser carregado na memória e execute o arquivo ias.py. Basta colocar o path para o arquivo .txt. No caso, os programas estão sendo colocados na pasta `programFiles/`.
+No arquivo principal (ias.py) insira na variável program (linha 16) o programa a ser carregado na memória e execute o arquivo ias.py. Basta colocar o path para o arquivo .txt. No caso, os programas estão sendo colocados na pasta `programFiles/`.
 
 A formatação do arquivo 'program.txt' é a seguinte: 'palavra de instrução' + 'comentários'
 

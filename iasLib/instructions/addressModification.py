@@ -3,7 +3,7 @@
 #  Opcode  | Symbolic representation | Description
 # 00010010 |      STOR M(X,8:19)     | Substitui campo de endereço da esquerda em M(X) por 12 bits mais 
 #          |                         | à direita de AC
-# 00010011 |      STOR M(X,28:39)    | Substitui campo de endereço da direita em M(X) por 12 bits mais  
+# 00010011 |      STOR M(X,28:39)    | Substitui campo de endereço da direita em M(X) por 12 bits mais 
 #          |                         | à direita de AC
 
 class AddressModification():
