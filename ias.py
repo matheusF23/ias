@@ -13,7 +13,7 @@ for i in range(1000):
     memory.append("0000000000000000000000000000000000000000")
 
 # Carregando programa na memória
-program = open("programFiles/mult.txt", "r")
+program = open("programFiles/sumOnePlusOne.txt", "r")
 x = 0   # Acesso à memória
 for line in program:
     partsOfTheLine = line.split()
