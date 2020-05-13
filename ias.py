@@ -5,6 +5,7 @@ from iasLib.instructions.addressModification import AddressModification
 from iasLib.instructions.conditionalDeviation import ConditionalDeviation
 from iasLib.instructions.dataTransfer import DataTransfer
 from iasLib.instructions.unconditionalDeviation import UnconditionalDeviation
+from iasLib.instructions.instructionsData import instructionData
 
 # Inicialização da memória
 memory = []
@@ -42,6 +43,8 @@ addressModification = AddressModification()
 conditionalDeviation = ConditionalDeviation()
 dataTransfer = DataTransfer()
 unconditionalDeviation = UnconditionalDeviation()
+
+ex = 1  # Número de execuções
 
 # Ciclo de execução
 def execution(ir, mar, memory, ac, mq, ibr):
@@ -141,9 +144,13 @@ for i in range(999):
             mq = answer[1]
             ibr = answer[2]
 
-    print("ir: ", ir, "mar: ", mar, "ac: ", ac, "mq: ", mq, "ibr: ", ibr)
+    print("Execução", ex, "|", "ir: ", ir, "|", instructionData(ir))
+    print("mar: ", mar, "ac: ", ac, "mq: ", mq, "ibr: ", ibr, "\n")
+    
     if(ir == "00000000"):
         break
+
+    ex += 1
 
 showMemory2 = input("\nGostaria de visualizar a Memória Completa? (y/n)")
 if(showMemory2 == 'y' or showMemory == 'yes'):
